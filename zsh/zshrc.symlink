@@ -5,7 +5,10 @@ export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/zsh/oh-my-zsh.zsh
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/dev
+export PROJECTS=~/www
+
+# run docker eval
+eval "$(docker-machine env default)"
 
 # use ~/.secret for setting up sensitive stuff that 
 # shouldn't be in your public repo
