@@ -10,6 +10,9 @@ export PROJECTS=~/www
 # run docker eval
 eval "$(docker-machine env default)"
 
+# run m
+export PATH=$PATH:/usr/local/m-cli
+
 # use ~/.secret for setting up sensitive stuff that 
 # shouldn't be in your public repo
 if [[ -a ~/.secret ]]
@@ -44,3 +47,19 @@ do
 done
 
 unset config_files
+
+export NVM_DIR="/Users/ole/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+eval $(/usr/libexec/path_helper -s)
+export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+export PATH="/Users/ole/.composer/vendor/bin:$PATH"
+
+export VISUAL=vim
+
+
+function lb() {
+    subl ~/Dropbox\ \(Personal\)/logbook/$(date '+%Y-%m-%d').md
+}
