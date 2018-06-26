@@ -5,10 +5,10 @@ export DOTFILES=$HOME/.dotfiles
 source $DOTFILES/zsh/oh-my-zsh.zsh
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/www
+#export PROJECTS=~/www
 
 # run docker eval
-eval "$(docker-machine env default)"
+#eval "$(docker-machine env default)"
 
 # run m
 export PATH=$PATH:/usr/local/m-cli
@@ -50,12 +50,15 @@ unset config_files
 
 export NVM_DIR="/Users/ole/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-eval $(/usr/libexec/path_helper -s)
-export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
+
+#export PATH="/usr/local/opt/libxml2/bin:$PATH"
+#export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+#export PATH="/usr/local/opt/sqlite/bin:$PATH"
+#eval $(/usr/libexec/path_helper -s)
+#export PATH="/usr/local/opt/elasticsearch@2.4/bin:$PATH"
 export PATH="/Users/ole/.composer/vendor/bin:$PATH"
+alias composer="php /usr/local/bin/composer.phar"
+
 
 export VISUAL=vim
 
@@ -63,3 +66,26 @@ export VISUAL=vim
 function lb() {
     subl ~/Dropbox\ \(Personal\)/logbook/$(date '+%Y-%m-%d').md
 }
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
+
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+    eval `ssh-agent -s`
+    ssh-add
+fi
+export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
+export PATH="/usr/local/opt/redis@3.2/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ole/Downloads/google-cloud-sdk 2/path.zsh.inc' ]; then source '/Users/ole/Downloads/google-cloud-sdk 2/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ole/Downloads/google-cloud-sdk 2/completion.zsh.inc' ]; then source '/Users/ole/Downloads/google-cloud-sdk 2/completion.zsh.inc'; fi
+
+# Alias for kubernetes
+alias k=kubectl
