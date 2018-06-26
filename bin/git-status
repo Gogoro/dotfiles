@@ -32,6 +32,13 @@ do
 		mod=0
 		cd $f
 
+		if [ $(git rev-list --right-only --count HEAD...@'{u}') -ne 0 ]
+		then
+			echo -en "\033[0;31m"
+			echo "Repo not up to date"
+			echo -en "\033[0m"
+		fi
+
 		# Check for modified files
 		if [ $(git status | grep modified -c) -ne 0 ]
 		then
