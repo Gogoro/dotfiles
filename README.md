@@ -21,9 +21,11 @@ these dotfiles unless you have all of these:
 Run this:
 
 ```sh
-git clone https://github.com/stiang/dotfiles.git ~/.dotfiles
+git clone https://github.com/gogoro/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
+
+chsh -s $(which zsh)
 ```
 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
