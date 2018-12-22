@@ -68,9 +68,6 @@
 # [core]
 #     editor = emacs -nw
 
-[user]
-    name = Stian Grytøyr
-    email = stian@grytoyr.net
 
 [difftool "Kaleidoscope"]
     cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
